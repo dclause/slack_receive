@@ -3,10 +3,10 @@
 namespace Drupal\slack_receive\Plugin\rest\resource;
 
 use Drupal\Core\Extension\ModuleHandlerInterface;
+use Drupal\rest\ModifiedResourceResponse;
 use Drupal\rest\Plugin\ResourceBase;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 /**
@@ -79,7 +79,7 @@ class SlashCommandResponse extends ResourceBase {
         substr($command, 1),
         trim($text),
       ]);
-      return new JsonResponse($result);
+      return new ModifiedResourceResponse($result);
     }
     throw new BadRequestHttpException(t('No entry was provided'));
   }
