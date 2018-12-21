@@ -1,0 +1,24 @@
+slack_receive.settings:
+  type: config_object
+  label: 'Slack receive configurations'
+  mapping:
+    authenticate:
+      type: boolan
+      label: 'Authenticate Slack applications individually'
+
+slack_receive.slack_receive_application.*:
+  type: config_entity
+  label: 'Slack receive application authorization.'
+  mapping:
+    id:
+      type: string
+      label: 'Slack application ID'
+    status:
+      type: boolean
+      label: 'Slack application status'
+    label:
+      type: string
+      label: 'The Slack application name'
+    key:
+      type: string
+      label: 'The Slack application signing key'

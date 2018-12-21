@@ -1,0 +1,14 @@
+services:
+  authentication.slack_receive:
+    class: Drupal\slack_receive\Authentication\Provider\SlackAuth
+    arguments: ['@config.factory', '@entity_type.manager', '@flood', '@datetime.time']
+    tags:
+      - { name: authentication_provider, provider_id: 'slack_auth', priority: 100 }
+  serializer.encoder.slack:
+    class: Drupal\slack_receive\Encoder\SlackJsonEncoder
+    tags:
+      - { name: encoder, format: slack }
+  serializer.decoder.form:
+    class: Drupal\slack_receive\Encoder\FormDecoder
+    tags:
+      - { name: encoder, format: form }

@@ -1,0 +1,10 @@
+id: slack_receive
+plugin_id: slack_receive
+granularity: method
+configuration:
+  POST:
+    supported_formats:
+      - slack
+      - form
+    supported_auth:
+      - slack_auth

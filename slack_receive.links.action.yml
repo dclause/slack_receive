@@ -1,0 +1,5 @@
+slack_receive.add_action:
+  route_name: entity.slack_receive_application.add_form
+  title: 'Register Slack Application'
+  appears_on:
+    - slack_receive.settings

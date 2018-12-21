@@ -1,0 +1,31 @@
+slack_receive.settings:
+  path: '/admin/config/services/slack_receive'
+  defaults:
+    _entity_list: 'slack_receive_application'
+    _title: 'Slack Receive'
+  requirements:
+    _permission: 'administer slack receive'
+
+entity.slack_receive_application.add_form:
+  path: '/admin/config/services/slack_receive/application/add'
+  defaults:
+    _title: 'Register Slack Application'
+    _entity_form: slack_receive_application.add
+  requirements:
+    _permission: 'administer slack receive'
+
+entity.slack_receive_application.edit_form:
+  path: '/admin/config/services/slack_receive/application/{slack_receive_application}/edit'
+  defaults:
+    _title: 'Edit new Slack Application'
+    _entity_form: slack_receive_application.edit
+  requirements:
+    _permission: 'administer slack receive'
+
+entity.slack_receive_application.delete_form:
+  path: '/admin/config/services/slack_receive/application/{slack_receive_application}/delete'
+  defaults:
+    _title: 'Delete Slack Application'
+    _entity_form: slack_receive_application.delete
+  requirements:
+    _permission: 'administer slack receive'

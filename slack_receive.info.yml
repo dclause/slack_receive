@@ -1,0 +1,9 @@
+name: Slack Receive
+type: module
+description: 'Creates an entry point for slash commands.'
+package: Slack
+version: 1.0
+core: 8.x
+configure: slack_receive.settings
+dependencies:
+  - drupal:rest

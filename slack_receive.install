@@ -1,0 +1,14 @@
+<?php
+
+use Drupal\user\Entity\Role;
+
+/**
+ * Implements hook_install().
+ *
+ * Allow anonymous user to send slash command to the appropriate entry point.
+ */
+function slack_receive_install() {
+  $role = Role::load('anonymous');
+  $role->grantPermission('restful post slack_receive');
+  $role->grantPermission('access taxonomy overview');
+}

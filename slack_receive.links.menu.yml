@@ -1,0 +1,6 @@
+slack_receive.settings:
+  route_name: slack_receive.settings
+  title: 'Slack Receive'
+  weight: 0
+  description: 'Configure Slack Receive settings.'
+  parent: system.admin_config_services
