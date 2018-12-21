@@ -20,6 +20,10 @@
  * @param string $text
  *   The slash command content such as provided.
  *
+ * @return array
+ *   An array representing a valid Slack Message API message
+ *   @see https://api.slack.com/docs/message-formatting
+ *
  * @ingroup slack_receive
  */
 function hook_slack_receive_slash_command($command, $text) {
@@ -27,7 +31,15 @@ function hook_slack_receive_slash_command($command, $text) {
 
   // React to /repeat command.
   if ($command == 'repeat') {
-    $result[] = t('Repeat: @text', ['@text' => $text]);
+
+    // Answser must follow Slash message API format
+    // @see https://api.slack.com/docs/message-formatting
+    // NOTE: you can use BBCode as per documentation, or HTML as below,
+    // it will be converted for you.
+    // @see \Drupal\slack_receive\Encoder\SlackJsonEncoder
+    $result = [
+      'text' => t('Repeat bot: <i>@text</i>', ['@text' => $text]),
+    ];
   }
-  $result;
+  return $result;
 }

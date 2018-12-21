@@ -1,0 +1,8 @@
+name: Slack Receive Example
+type: module
+description: 'Example implementation on how to use slack_receive.'
+package: Slack
+version: 1.0
+core: 8.x
+dependencies:
+  - slack_receive:slack_receive
