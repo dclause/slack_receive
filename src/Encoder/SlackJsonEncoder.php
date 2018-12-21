@@ -55,6 +55,7 @@ class SlackJsonEncoder extends BaseJsonEncoder implements EncoderInterface {
         '\<strong.*?\>(\s*?)(.*?)(\s*?)\<\/strong\>' => '*$2*',
         '\<b.*?\>(\s*?)(.*?)(\s*?)\<\/b\>' => '*$2*',
         '\<em.*?\>(\s*?)(.*?)(\s*?)\<\/em\>' => '_$2_',
+        '\<i.*?\>(\s*?)(.*?)(\s*?)\<\/i\>' => '_$2_',
         '\<s.*?\>(\s*?)(.*?)(\s*?)\<\/s\>' => '~$2~',
         '\<u.*?\>(\s*?)(.*?)(\s*?)\<\/u\>' => '_$2_',
         // Code formatters
