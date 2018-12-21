@@ -41,7 +41,7 @@ class SlackJsonEncoder extends BaseJsonEncoder implements EncoderInterface {
   /**
    * {@inheritdoc}
    */
-  public function encode($data, $format, array $context = array()) {
+  public function encode($data, $format, array $context = []) {
 
     /**
      * This function will try to convert HTML to slack supported BBCode.

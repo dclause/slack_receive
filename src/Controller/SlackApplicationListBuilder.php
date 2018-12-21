@@ -39,14 +39,14 @@ class SlackApplicationListBuilder extends ConfigEntityListBuilder implements For
       '#default_value' => $settings->get('authenticate'),
     ];
 
-    $form['container'] = array(
+    $form['container'] = [
       '#type' => 'container',
       '#states' => [
         'visible' => [
           ':input[name="authenticate"]' => ['checked' => TRUE],
         ],
       ],
-    );
+    ];
 
     // Define the table of authorized apps.
     $form['container']['applications'] = [

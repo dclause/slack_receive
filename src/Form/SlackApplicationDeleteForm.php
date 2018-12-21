@@ -17,9 +17,9 @@ class SlackApplicationDeleteForm extends EntityConfirmFormBase {
    * {@inheritdoc}
    */
   public function getQuestion() {
-    return $this->t('Are you sure you want to unregister slack application %label?', array(
+    return $this->t('Are you sure you want to unregister slack application %label?', [
         '%label' => $this->entity->label(),
-    ));
+    ]);
   }
 
   /**
@@ -34,9 +34,9 @@ class SlackApplicationDeleteForm extends EntityConfirmFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->entity->delete();
-    $this->messenger()->addStatus($this->t('The slack application %label has been unregistered.', array(
+    $this->messenger()->addStatus($this->t('The slack application %label has been unregistered.', [
       '%label' => $this->entity->label(),
-    )));
+    ]));
     $form_state->setRedirectUrl($this->getCancelUrl());
   }
 }
